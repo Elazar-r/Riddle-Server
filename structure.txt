@@ -1,0 +1,8 @@
+server/
+├── db/
+│   ├── index.js         # MongoClient connection logic
+│   ├── userModel.js     # (optional) if using plain JS objects
+│   └── models/          # (optional) if using Mongoose
+├── routes/
+├── controllers/
+└── app.js
