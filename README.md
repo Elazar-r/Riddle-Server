@@ -2,6 +2,14 @@
 
 ## Local Deployment
 
+Clone the repository
+```bash
+git clone
 npm install
-node index.js
+```
+
+Run the server
+```bash
+npm start
+```
 
