@@ -1,5 +1,6 @@
 # Riddle-Server
 *Author: Elazar Rabinovich*
+*Lead instructor: Moshe Ben Simon*
 
 This server is meant to serve the client application for the Riddle game. It provides an API to manage riddles, users, and game sessions.
 
