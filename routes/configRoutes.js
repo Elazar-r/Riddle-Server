@@ -5,6 +5,8 @@ export default function config(app) {
         // TODO: call the function to get the riddle list from the controller
 
         res.status(200).json({ aaaaa: "Welcome to the Riddle Server!" });
+        console.log(`GET request to the root route`);
+        
     });
 
 
