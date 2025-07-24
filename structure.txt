@@ -1,8 +1,49 @@
-server/
-├── db/
-│   ├── index.js         # MongoClient connection logic
-│   ├── userModel.js     # (optional) if using plain JS objects
-│   └── models/          # (optional) if using Mongoose
-├── routes/
-├── controllers/
-└── app.js
+my-express-app/
+│
+├── src/
+│   ├── routes/            # Route definitions (only routing logic, usually imports controllers)
+│   │   ├── users.route.js
+│   │   └── index.js       # Combines all routes
+│   │
+│   ├── controllers/       # Route handlers (business logic)
+│   │   ├── users.controller.js
+│   │   └── ...
+│   │
+│   ├── models/            # Mongoose or Sequelize models
+│   │   ├── user.model.js
+│   │   └── ...
+│   │
+│   ├── services/          # Business logic & DB operations (used by controllers)
+│   │   ├── user.service.js
+│   │   └── ...
+│   │
+│   ├── middlewares/       # Express middlewares
+│   │   ├── auth.middleware.js
+│   │   └── ...
+│   │
+│   ├── utils/             # Utility functions (e.g., formatters, validators)
+│   ├── config/            # Configuration (env, db connection, etc.)
+│   ├── app.js             # Initializes express app (middlewares, routes)
+│   └── server.js          # Starts the server
+│
+├── .env
+├── package.json
+└── README.md
+
+
+Client Request
+    ↓
+Express app (app.js)
+    ↓
+app.use('/api', routes)
+    ↓
+Router file (e.g. routes/users.route.js)
+    ↓
+Controller (e.g. controllers/users.controller.js)
+    ↓
+Service (e.g. services/user.service.js)
+    ↓
+    ↓
+Database (MongoDB, PostgreSQL, etc.)
+    ↑
+Response travels back up the chain
