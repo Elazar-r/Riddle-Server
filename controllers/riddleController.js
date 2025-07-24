@@ -1,3 +1,3 @@
-const mongoService = require('../db/mongoService');
-const { findRiddleById, createRiddle, updateRiddle, deleteRiddle } = require('../db/riddleFunctions');
+// const mongoService = require('../db/mongoService');
+// const { findRiddleById, createRiddle, updateRiddle, deleteRiddle } = require('../db/riddleFunctions');
 
