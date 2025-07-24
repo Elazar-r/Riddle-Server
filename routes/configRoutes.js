@@ -1,5 +1,4 @@
-import express from "express";
-import mongoService from "../db/index.js";
+import { getRiddles } from "../service/riddlesService.js";
 
 let requestNumber = 0;
 
@@ -21,13 +20,15 @@ export default function config(app) {
 
     app.get("/riddles", async (req, res) => {
         try {
-            const riddles = await mongoService.getAllDocuments(mongoService.client, "riddles");
+            const riddles = await getRiddles();
+            console.log(`Request ${requestNumber}, GET request to /riddles`);
             res.status(200).json(riddles);
         } catch (error) {
-            console.error("Error fetching riddles:", error);
-            res.status(500).json({ error: "Failed to fetch riddles" });
+            console.error(`Error fetching riddles: ${error.message}`);
+            res.status(500).json({ msg: "Internal Server Error" });
         }
     });
+
 
     app.use((req, res) => {
         console.log(`Request ${requestNumber}, 404 Not Found for ${req.originalUrl}`);
