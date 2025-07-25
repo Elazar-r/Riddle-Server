@@ -1,6 +1,5 @@
-import { getAllDocuments } from "../db/index.js";
+import { getAllDocuments } from "../db/mongo.js";
 
 export const getRiddles = async () => {
-    console.log("Fservice: Fetching riddles from the database");
     return await getAllDocuments("riddles");
 };
