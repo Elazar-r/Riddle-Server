@@ -8,8 +8,8 @@
  * 4. Handles process-level errors
  */
 
-import dotenv from 'dotenv';
-dotenv.config({ quiet: true });
+import { config } from 'dotenv';
+config({ quiet: true });
 import { connectMongoDB } from './src/db/mongodb.js';
 import { testSupabaseConnection } from './src/db/supabase.js';
 import app from './src/server.js';
