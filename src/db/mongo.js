@@ -3,8 +3,8 @@ import { config } from "dotenv";
 
 config({ quiet: true });
 
-const mongoUrl = process.env.mongo_url;
-if (!mongoUrl) { throw new Error("Environment variable 'mongo_url' must be defined") }
+const mongoUrl = process.env.MONGODB_URI;
+if (!mongoUrl) { throw new Error("Environment variable 'MONGODB_URI' must be defined") }
 
 const client = new MongoClient(mongoUrl);
 
